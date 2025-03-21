@@ -1,4 +1,4 @@
-# Parth's Tak Manager
+# Parth's Task Manager
 
 ## Overview
 This is a simple Task Management Application that allows users to add, edit, delete, and view tasks. The application is built using HTML, CSS, and JavaScript, with local storage support to persist tasks across sessions.
