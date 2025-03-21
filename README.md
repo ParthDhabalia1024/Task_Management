@@ -1,51 +1,47 @@
 # Parth's Task Manager
 
 ## Overview
-This is a simple **Task Management Application** that allows users to manage their daily tasks efficiently. Users can **add, edit, delete, and filter tasks** based on their status (pending/completed). The app also saves tasks using **local storage**, ensuring persistence even after refreshing the page.
+This is a simple Task Management Application that allows users to add, edit, delete, and view tasks. The application is built using HTML, CSS, and JavaScript, with local storage support to persist tasks across sessions.
 
 ## Features
-- **Add Task:** Users can input a task name and description.
-- **View Tasks:** Displays a list of all tasks with their details.
-- **Edit Task:** Allows users to modify an existing task.
-- **Delete Task:** Removes a task from the list.
-- **Task Status:** Mark tasks as completed or pending.
-- **Filter Tasks:** Filter tasks based on their status.
-- **Local Storage:** Tasks persist even after refreshing the page.
-- **Responsive UI:** Works well on different screen sizes.
-- **Enhanced UI:** Styled with CSS for a modern look.
+- **Add Task**: Users can input a task name and description.
+- **View Tasks**: Displays a list of all tasks with their details.
+- **Edit Task**: Users can update existing task details.
+- **Delete Task**: Users can remove a task from the list.
+- **Task Status**: Tasks can be marked as completed or pending.
+- **Filter Tasks**: Users can filter tasks based on their status (completed/pending).
+- **Persistent Storage**: Tasks are saved in local storage.
 
 ## Technologies Used
-- **HTML** (Structure)
-- **CSS** (Styling & Responsive Design)
-- **JavaScript** (Functionality & DOM Manipulation)
-- **Local Storage** (Data Persistence)
+- **HTML**: For the structure of the application.
+- **CSS**: For styling and responsiveness.
+- **JavaScript**: For functionality and interactivity.
+- **Local Storage**: To store and retrieve tasks.
 
 ## Installation & Usage
-1. **Clone the Repository**
+1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/task-management-app.git
+   git clone https://github.com/your-username/task-manager.git
    ```
-2. **Open `index.html` in your browser**
-   - No additional setup is required.
-   
-## How to Use
-1. Enter a task name and description in the input fields.
-2. Click the **Add Task** button to add the task to the list.
-3. Use the **Mark Completed** button to update task status.
-4. Click the **Delete** button to remove a task.
-5. Use filter buttons to view pending/completed tasks.
+2. Navigate to the project folder:
+   ```sh
+   cd task-manager
+   ```
+3. Open `app.html` in a web browser.
+
+## File Structure
+- `app.html` – Main structure of the application.
+- `styles.css` – Styling for the user interface.
+- `script.js` – JavaScript logic for task management.
 
 ## Screenshots
-![Task Management UI](download.jpeg)
-![Task List View](download_1.jpeg)
+Below are example images of the application:
 
-## Future Enhancements
-- Add due dates for tasks and sorting.
-- Implement a search feature.
-- Enhance the UI further with animations.
+![Task Manager Screenshot](download.jpeg)
+![Task Manager Screenshot](download_1.jpeg)
 
 ## License
-This project is licensed under the MIT License.
+This project is open-source and available for modification and distribution under the MIT License.
 
----
-Developed with ❤️ by **Parth Dhabalia I383**
+## Contributions
+Feel free to contribute by submitting pull requests or reporting issues!
