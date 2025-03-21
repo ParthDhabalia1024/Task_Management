@@ -1,4 +1,4 @@
-# Task Management Application
+# Parth's Task Manager
 
 ## Overview
 This is a simple **Task Management Application** that allows users to manage their daily tasks efficiently. Users can **add, edit, delete, and filter tasks** based on their status (pending/completed). The app also saves tasks using **local storage**, ensuring persistence even after refreshing the page.
@@ -37,7 +37,7 @@ This is a simple **Task Management Application** that allows users to manage the
 
 ## Screenshots
 ![Task Management UI](download.jpeg)
-![Task List View](download(1).jpeg)
+![Task List View](download_1.jpeg)
 
 ## Future Enhancements
 - Add due dates for tasks and sorting.
