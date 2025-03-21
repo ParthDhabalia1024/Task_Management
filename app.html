@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Parth's Task Manager</h1>
+        <div class="task-input">
+            <input type="text" id="taskName" placeholder="Task Name">
+            <textarea id="taskDescription" placeholder="Task Description"></textarea>
+            <button onclick="addTask()">Add Task</button>
+        </div>
+        <div class="filters">
+            <button onclick="filterTasks('all')">All</button>
+            <button onclick="filterTasks('pending')">Pending</button>
+            <button onclick="filterTasks('completed')">Completed</button>
+        </div>
+        <ul id="taskList"></ul>
+        <div class="image-container">
+            <img src="download.jpeg" alt="Image 1">
+            <img src="download_1.jpeg" alt="Image 2">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
