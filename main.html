@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management App</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 60%;
+            margin: 40px auto;s
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .task-input {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .filters {
+            margin-top: 10px;
+        }
+        .filters button {
+            margin: 5px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .task-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .image-container img {
+            width: 45%;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Parth's Task Manager</h1>
+        <div class="task-input">
+            <input type="text" id="taskName" placeholder="Task Name">
+            <textarea id="taskDescription" placeholder="Task Description"></textarea>
+            <button onclick="addTask()">Add Task</button>
+        </div>
+        <div class="filters">
+            <button onclick="filterTasks('all')">All</button>
+            <button onclick="filterTasks('pending')">Pending</button>
+            <button onclick="filterTasks('completed')">Completed</button>
+        </div>
+        <ul id="taskList"></ul>
+        <div class="image-container">
+            <img src="download.jpeg" alt="Image 1">
+            <img src="download (1).jpeg" alt="Image 2">
+        </div>
+    </div>
+    <script>
+        let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+        
+        function addTask() {
+            const name = document.getElementById("taskName").value.trim();
+            const description = document.getElementById("taskDescription").value.trim();
+            if (!name) {
+                alert("Task name cannot be empty!");
+                return;
+            }
+            
+            const task = { id: Date.now(), name, description, status: "pending" };
+            tasks.push(task);
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+            renderTasks();
+            document.getElementById("taskName").value = "";
+            document.getElementById("taskDescription").value = "";
+        }
+        
+        function renderTasks(filter = "all") {
+            const taskList = document.getElementById("taskList");
+            taskList.innerHTML = "";
+            tasks.forEach(task => {
+                if (filter !== "all" && task.status !== filter) return;
+                
+                const li = document.createElement("li");
+                li.className = "task-item";
+                li.innerHTML = `
+                    <span class="${task.status === 'completed' ? 'completed' : ''}">${task.name} - ${task.description}</span>
+                    <div>
+                        <button onclick="toggleStatus(${task.id})">${task.status === "completed" ? "Mark Pending" : "Mark Completed"}</button>
+                        <button onclick="deleteTask(${task.id})">Delete</button>
+                    </div>
+                `;
+                taskList.appendChild(li);
+            });
+        }
+        
+        function toggleStatus(id) {
+            tasks = tasks.map(task => task.id === id ? { ...task, status: task.status === "completed" ? "pending" : "completed" } : task);
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+            renderTasks();
+        }
+        
+        function deleteTask(id) {
+            tasks = tasks.filter(task => task.id !== id);
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+            renderTasks();
+        }
+        
+        function filterTasks(status) {
+            renderTasks(status);
+        }
+        
+        document.addEventListener("DOMContentLoaded", () => renderTasks());
+    </script>
+</body>
+</html>
