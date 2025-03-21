@@ -37,8 +37,8 @@ This is a simple Task Management Application that allows users to add, edit, del
 ## Screenshots
 Below are example images of the application:
 
-![Task Manager Screenshot](download.png)
-![Task Manager Screenshot](download_1.png)
+![Task Manager Screenshot](download.jpeg)
+![Task Manager Screenshot](download_1.jpeg)
 
 ## License
 This project is open-source and available for modification and distribution under the MIT License.
