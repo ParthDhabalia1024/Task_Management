@@ -48,4 +48,4 @@ This is a simple **Task Management Application** that allows users to manage the
 This project is licensed under the MIT License.
 
 ---
-Developed with ❤️ by **Your Name**
+Developed with ❤️ by **Parth Dhabalia I383**
