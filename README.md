@@ -36,8 +36,8 @@ This is a simple **Task Management Application** that allows users to manage the
 5. Use filter buttons to view pending/completed tasks.
 
 ## Screenshots
-![Task Management UI](download.jpg)
-![Task List View](download(1).jpg)
+![Task Management UI](download.jpeg)
+![Task List View](download(1).jpeg)
 
 ## Future Enhancements
 - Add due dates for tasks and sorting.
